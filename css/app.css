@@ -1,15 +1,173 @@
+/*===========================================
+=            Responsive Timeline css by brunodsgn            =
+=   Found At https://github.com/brunodsgn/responsive-timeline       =
+=============================================*/
+
+header:after,
+#timeline .timeline-item:after,
+header:before,
+#timeline .timeline-item:before {
+    content: '';
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+#timeline {
+    width: 90%;
+    margin: 30px auto;
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+#timeline:before {
+    content: "";
+    width: 3px;
+    height: 100%;
+    background: #ee4d4d;
+    left: 50%;
+    top: 0;
+    position: absolute;
+}
+
+#timeline:after {
+    content: "";
+    clear: both;
+    display: table;
+    width: 100%;
+}
+
+#timeline .timeline-item {
+    margin-bottom: 50px;
+    position: relative;
+}
+
+#timeline .timeline-item .timeline-icon {
+    background: #ee4d4d;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    overflow: hidden;
+    margin-left: -23px;
+    border-radius: 50%;
+}
+
+#timeline .timeline-item .timeline-icon img {
+    position: relative;
+    top: 14px;
+    left: 14px;
+}
+
+#timeline .timeline-item .timeline-content {
+    width: 45%;
+    background: #fff;
+    padding: 20px;
+    -ms-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+#timeline .timeline-item .timeline-content h2 {
+    padding: 15px;
+    background: #ee4d4d;
+    color: #fff;
+    margin: -20px -20px 0 -20px;
+    font-weight: 300;
+    border-radius: 3px 3px 0 0;
+}
+
+#timeline .timeline-item .timeline-content:before {
+    content: '';
+    position: absolute;
+    left: 45%;
+    top: 20px;
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 7px solid #ee4d4d;
+}
+
+#timeline .timeline-item .timeline-content.right {
+    float: right;
+}
+
+#timeline .timeline-item .timeline-content.right:before {
+    content: '';
+    right: 45%;
+    left: inherit;
+    border-left: 0;
+    border-right: 7px solid #ee4d4d;
+}
+
+@media screen and (max-width: 768px) {
+    #timeline {
+        margin: 30px;
+        padding: 0;
+    }
+    #timeline:before {
+        left: 0;
+    }
+    #timeline .timeline-item .timeline-content {
+        width: 90%;
+        float: right;
+    }
+    #timeline .timeline-item .timeline-content:before,
+    #timeline .timeline-item .timeline-content.right:before {
+        left: 10%;
+        margin-left: -6px;
+        border-left: 0;
+        border-right: 7px solid #ee4d4d;
+    }
+    #timeline .timeline-item .timeline-icon {
+        left: 0;
+    }
+}
+
+/*=====  End of  Responsive Timeline css  ======*/
+
+
+
+/*=============================================
+=            My Custom CSS Styles            =
+=============================================*/
+
+/*----------  Base Styles  ----------*/
+
 *,
 *:before,
 *:after {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box
+    -moz-box-sizing: border-box;
 }
 
 body,
 html {
-    height: 100%
+    height: 100%;
 }
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Dosis", arial, verdana;
+    font-weight: 500;
+}
+
+/*----------  End Of Base Styles  ----------*/
+
 
 body {
     font-size: 13px;
@@ -20,61 +178,54 @@ body {
     font-family: "Dosis", helvetica, arial, verdana;
     line-height: 20px;
     font-size: 14px;
-    color: #726f77
+    color: #726f77;
 }
 
-img {
-    max-width: 100%
+.notifications{
+    position:fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 4;
 }
 
-a {
-    text-decoration: none
+.notifications p{
+    padding: 10px 20px;
+    background: #ff6a00;
+    color: #fff;
+    font-weight:bold;
 }
 
-.content {
+/* Dummy Header element to show blured background image behind description */
+header {
+    height: 500px;
+    background: #2b2e48;
+    background: url("http://i.ytimg.com/vi/P9Y0SiYPXGI/maxresdefault.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    padding: 10px;
+    -ms-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05);
+}
+
+
+.container {
     width: 90%;
     margin: -400px auto 0;
     background: #f9f9f9;
     position: relative;
 }
 
-.hero-img {
-    /*height: 400px;
-  background: url("http://i.ytimg.com/vi/C-vvxaQFGgQ/mqdefault.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center; */
-}
-
-h1,
-h2,
-h3,
-h4 {
-    font-family: "Dosis", arial, tahoma, verdana;
-    font-weight: 500
-}
-
-.project-name {
-    text-align: center;
-    padding: 10px 0
-}
-
-.hero-img p#intro {
-    padding: 0px 20px;
-    font-size: 21px;
-    letter-spacing: 2px;
-    line-height: 1.5;
-    color: #726577;
-    text-align: justify;
-    font-family: "Dosis", arial, tahoma, verdana;
-}
+/*----------  Description div styles block  ----------*/
 
 .avatar {
     padding-top: 20px;
     text-align: center;
 }
 
-.avatar p {
+.avatar .caption {
     font-size: 14px;
     padding: 5px;
     text-align: center;
@@ -87,201 +238,21 @@ h4 {
     border-radius: 50%;
 }
 
-header {
-    height: 500px;
-    background: #2b2e48;
-    background: url("http://i.ytimg.com/vi/P9Y0SiYPXGI/maxresdefault.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    -webkit-filter: blur(10px);
-            filter: blur(10px);
-    padding: 10px;
-    -ms-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05);
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05)
-}
-
-header .logo {
-    color: #ee4d4d;
-    float: left;
+.description .description-text {
+    padding: 0 20px;
+    font-size: 21px;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    color: #726577;
+    text-align: justify;
     font-family: "Dosis", arial, tahoma, verdana;
-    font-size: 22px;
-    font-weight: 500
 }
 
-header .logo>span {
-    color: #f7aaaa;
-    font-weight: 300
-}
-
-header .social {
-    float: right
-}
-
-header .social .btn {
-    font-family: "Dosis";
-    font-size: 14px;
-    margin: 10px 5px
-}
+/*----------  End of Description Styles block  ----------*/
 
 
-/*
-  ***Responsive Timeline css by brunodsgn***
-  https://github.com/brunodsgn/responsive-timeline
-*/
+/*---------- My Styles overriding above Responsive css timeline styles  ----------*/
 
-header:after,
-#timeline .timeline-item:after,
-header:before,
-#timeline .timeline-item:before {
-    content: '';
-    display: block;
-    width: 100%;
-    clear: both
-}
-
-#timeline {
-    width: 90%;
-    margin: 30px auto;
-    position: relative;
-    transition: all 0.4s ease
-}
-
-#timeline:before {
-    content: "";
-    width: 3px;
-    height: 100%;
-    background: #ee4d4d;
-    left: 50%;
-    top: 0;
-    position: absolute
-}
-
-#timeline:after {
-    content: "";
-    clear: both;
-    display: table;
-    width: 100%
-}
-
-#timeline .timeline-item {
-    margin-bottom: 50px;
-    position: relative
-}
-
-#timeline .timeline-item .timeline-icon {
-    background: #ee4d4d;
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    overflow: hidden;
-    margin-left: -23px;
-    border-radius: 50%
-}
-
-#timeline .timeline-item .timeline-icon img {
-    position: relative;
-    top: 14px;
-    left: 14px
-}
-
-#timeline .timeline-item .timeline-content {
-    width: 45%;
-    background: #fff;
-    padding: 20px;
-    -ms-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
-    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    transition: all 0.3s ease
-}
-
-#timeline .timeline-item .timeline-content h2 {
-    padding: 15px;
-    background: #ee4d4d;
-    color: #fff;
-    margin: -20px -20px 0 -20px;
-    font-weight: 300;
-    border-radius: 3px 3px 0 0
-}
-
-#timeline .timeline-item .timeline-content:before {
-    content: '';
-    position: absolute;
-    left: 45%;
-    top: 20px;
-    width: 0;
-    height: 0;
-    border-top: 7px solid transparent;
-    border-bottom: 7px solid transparent;
-    border-left: 7px solid #ee4d4d
-}
-
-#timeline .timeline-item .timeline-content.right {
-    float: right
-}
-
-#timeline .timeline-item .timeline-content.right:before {
-    content: '';
-    right: 45%;
-    left: inherit;
-    border-left: 0;
-    border-right: 7px solid #ee4d4d
-}
-
-.btn {
-    padding: 5px 15px;
-    text-decoration: none;
-    background: transparent;
-    border: 2px solid #f27c7c;
-    color: #f27c7c;
-    display: inline-block;
-    position: relative;
-    text-transform: uppercase;
-    font-size: 12px;
-    border-radius: 5px;
-    transition: background 0.3s ease;
-    -ms-box-shadow: 2px 2px 0 #f27c7c;
-    box-shadow: 2px 2px 0 #f27c7c
-}
-
-.btn:hover {
-    box-shadow: none;
-    top: 2px;
-    left: 2px;
-    -ms-box-shadow: 2px 2px 0 transparent;
-    box-shadow: 2px 2px 0 transparent
-}
-
-@media screen and (max-width: 768px) {
-    #timeline {
-        margin: 30px;
-        padding: 0
-    }
-    #timeline:before {
-        left: 0
-    }
-    #timeline .timeline-item .timeline-content {
-        width: 90%;
-        float: right
-    }
-    #timeline .timeline-item .timeline-content:before,
-    #timeline .timeline-item .timeline-content.right:before {
-        left: 10%;
-        margin-left: -6px;
-        border-left: 0;
-        border-right: 7px solid #ee4d4d
-    }
-    #timeline .timeline-item .timeline-icon {
-        left: 0
-    }
-}
-
-
-/*
-  ***My Styles overriding above styles***
-*/
 
 #timeline:before {
     background: #ffa500 !important;
@@ -307,6 +278,10 @@ header:before,
     border-right-color: #ffac00;
 }
 
+.no-content .timeline-content{
+    padding-bottom: 0 !important;
+}
+
 @media(max-width: 768px) {
     #timeline .timeline-item .timeline-content:before,
     #timeline .timeline-item .timeline-content.right:before {
@@ -314,19 +289,21 @@ header:before,
     }
 }
 
+/*----------  End of Overriding Styles  ----------*/
 
-/*
-  **Page Styles**
-*/
 
-.timeline-title {
+.section-title {
     background: #f9f9f9;
     padding: 20px 0;
     text-align: center;
     position: relative;
 }
 
-#timeline .timeline-content .card-container {
+
+/*----------  Styles for Movie Thumbnails inside timeline content div  ----------*/
+
+
+#timeline .timeline-content .thumbnail-container {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -338,7 +315,7 @@ header:before,
             flex-wrap: wrap;
 }
 
-#timeline .timeline-content .card-container .card {
+#timeline .timeline-content .thumbnail-container .thumbnail {
     margin: 10px;
     -webkit-flex-basis: calc(33.33% - 20px);
         -ms-flex-preferred-size: calc(33.33% - 20px);
@@ -351,37 +328,37 @@ header:before,
             flex-direction: column;
 }
 
-#timeline .timeline-content .card-container .card:hover .card-info {
+#timeline .timeline-content .thumbnail-container .thumbnail:hover .thumbnail-info {
     color: #ff6600;
 }
 
-#timeline .timeline-content .card-container .card:hover .card-img img {
+#timeline .timeline-content .thumbnail-container .thumbnail:hover .thumbnail-img img {
     -webkit-transform: scale(1.05);
             transform: scale(1.05);
 }
 
-#timeline .timeline-content .card-container .card:hover .card-img:before {
+#timeline .timeline-content .thumbnail-container .thumbnail:hover .thumbnail-img:before {
     opacity: 1;
 }
 
-#timeline .timeline-content .card-container .card:hover .card-img:after {
+#timeline .timeline-content .thumbnail-container .thumbnail:hover .thumbnail-img:after {
     opacity: 1;
     -webkit-transform: scale(1.05);
             transform: scale(1.05);
 }
 
-#timeline .timeline-content .card-container .card .card-img img {
+#timeline .timeline-content .thumbnail-container .thumbnail .thumbnail-img img {
     width: 100%;
     height: 130px;
     transition: all, 0.2s, ease-in;
 }
 
-#timeline .timeline-content .card-container .card .card-img {
+#timeline .timeline-content .thumbnail-container .thumbnail .thumbnail-img {
     position: relative;
     height: 130px;
 }
 
-#timeline .timeline-content .card-container .card .card-img:before {
+#timeline .timeline-content .thumbnail-container .thumbnail .thumbnail-img:before {
     content: 'Click To Know More';
     position: absolute;
     top: 50%;
@@ -397,7 +374,7 @@ header:before,
     z-index: 1;
 }
 
-#timeline .timeline-content .card-container .card .card-img:after {
+#timeline .timeline-content .thumbnail-container .thumbnail .thumbnail-img:after {
     content: '';
     color: #fff;
     text-align: center;
@@ -413,7 +390,7 @@ header:before,
     opacity: 0;
 }
 
-#timeline .timeline-content .card-container .card .card-info {
+#timeline .timeline-content .thumbnail-container .thumbnail .thumbnail-info {
     margin-top: 5px;
     text-align: center;
     color: #726f77;
@@ -432,12 +409,41 @@ header:before,
     color: #ffa500;
 }
 
+/*----------  End of thumbnail styles block  ----------*/
+
+
+/*----------  Footer Styles  ----------*/
+
+
 footer {
     width: 100%;
     background: #ffac00;
     color: #fff;
     font-size: 21px;
 }
+
+footer p.conclusion {
+    text-align: center;
+    padding: 20px 30px;
+    margin: 0;
+    line-height: 1.5;
+    letter-spacing: 2px;
+}
+
+footer p{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+footer p a {
+    transition: all 0.2s ease-out;
+}
+
+footer p a:hover {
+    color: #00aaff;
+}
+
 
 footer ul {
     margin: 0;
@@ -458,27 +464,6 @@ footer li {
     transition: all 0.2ms esae-out;
 }
 
-footer li#fb {
-    background: blue;
-    margin-right: 20px;
-}
-
-footer li#tw {
-    background: #4099ff;
-}
-
-footer li:hover {
-    background: #fff !important;
-}
-
-footer li#fb:hover a {
-    color: blue;
-}
-
-footer li#tw:hover a {
-    color: #4099ff;
-}
-
 footer li a {
     display: block;
     width: 50px;
@@ -489,30 +474,29 @@ footer li a {
     transition: all 0.2ms esae-out;
 }
 
-footer p#conclusion {
-    text-align: justify;
-    padding: 20px 30px;
-    margin: 0;
-    line-height: 1.5;
-    letter-spacing: 2px;
+footer li.fb {
+    background: blue;
+    margin-right: 20px;
 }
 
-footer p a {
-    transition: all 0.2s ease-out;
+footer li.tw {
+    background: #4099ff;
 }
 
-footer p a:hover {
-    color: #00aaff;
+footer li:hover {
+    background: #fff !important;
 }
 
-footer p#share {
-    text-align: center;
-    padding: 0;
-    margin: 0
+footer li.fb:hover a {
+    color: blue;
 }
 
-footer p#made {
-    padding: 10px;
+footer li.tw:hover a {
+    color: #4099ff;
+}
+
+footer .made-by {
+    padding: 15px;
     text-align: center;
     background: #EAA004;
     color: #fff;
@@ -520,19 +504,25 @@ footer p#made {
     font-size: 12px;
 }
 
-footer p#made i {
+footer .made-by i {
     color: red;
 }
 
+/*----------  End of footer styles  ----------*/
+
+
 @media(max-width: 768px) {
-    .timeline-title {
+    .section-title {
         text-align: left;
     }
-    .hero-img p#intro {
+    .description .description-text {
         font-size: 18px;
     }
-    footer p#conclusion {
+    footer .conclusion {
         font-size: 14px;
         padding: 10px;
     }
 }
+
+
+/*=====  End of My Custom Styles  ======*/
